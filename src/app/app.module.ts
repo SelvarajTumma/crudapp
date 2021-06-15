@@ -3,16 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
+import { TutorialDeatailsComponent } from './components/tutorial-deatails/tutorial-deatails.component';
+import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TutorialServiceService } from './services/tutorial-service.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddTutorialComponent,
+    TutorialDeatailsComponent,
+    TutorialsListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+    
   ],
-  providers: [],
+  providers: [TutorialServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
